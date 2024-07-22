@@ -11,9 +11,9 @@ random_french = ""
 random_english = ""
 flip_timer = NONE
 try:
-    df = pandas.read_csv("data/to_learn_words")
+    df = pandas.read_csv("to_learn_words")
 except FileNotFoundError:
-    test = pandas.read_csv("data/french_words.csv")
+    test = pandas.read_csv("french_words.csv")
     df = pandas.DataFrame(test)
 df_dic = df.to_dict(orient="records")
 my_random = {}
@@ -46,7 +46,7 @@ def next_card():
 def is_known():
     df_dic.remove(my_random)
     data = pandas.DataFrame(df_dic)
-    data.to_csv("data/to_learn_words", index=False)
+    data.to_csv("to_learn_words", index=False)
     next_card()
     print(len(df_dic))
 
