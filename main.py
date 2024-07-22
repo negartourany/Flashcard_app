@@ -58,8 +58,8 @@ time_function = windows.after(3000, update_canvas)
 # --------------------------------canvas -------------------------------------------#
 # card front config
 canvas = Canvas(width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0)
-card_f_pic = PhotoImage(file="images/card_front.png")
-card_b_pic = PhotoImage(file="images/card_back.png")
+card_f_pic = PhotoImage(file="card_front.png")
+card_b_pic = PhotoImage(file="card_back.png")
 flashcard_img = canvas.create_image(400, 263, image=card_f_pic)
 canvas.grid(row=0, column=0, columnspan=2)
 # text
@@ -67,11 +67,11 @@ card_title = canvas.create_text(400, 150, text="", font=("Ariel", 40, "italic"))
 card_text = canvas.create_text(400, 253, text="", font=("Ariel", 60, "bold"))
 # --------------------------- button config-----------------------------------------#
 # wrong button
-wrong_image = PhotoImage(file="images/wrong.png")
+wrong_image = PhotoImage(file="wrong.png")
 wrong_btn = Button(image=wrong_image, command=next_card)
 wrong_btn.grid(row=1, column=0)
 # right button
-right_image = PhotoImage(file="images/right.png")
+right_image = PhotoImage(file="right.png")
 right_btn = Button(image=right_image, command=is_known)
 right_btn.grid(row=1, column=1)
 
